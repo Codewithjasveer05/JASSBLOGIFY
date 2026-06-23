@@ -80,7 +80,7 @@ Blogify
 Clone the repository
 
 ```bash
-git clone  https://github.com/Codewithjasveer05/Jassblogify.git
+git clone  https://github.com/Codewithjasveer05/jassblogify
 ```
 
 Go to the project folder
@@ -98,7 +98,7 @@ npm install
 Create a `.env` file
 
 ```env
-PORT=8005
+PORT=8000
 MONGO_URL=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 ```
