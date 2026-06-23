@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+</head>
+<body>
+
+    <%- include('./partials/navbar') %>
+
+    <div class="container mt-4">
+
+        <% if (blogs.length === 0) { %>
+            <h3>No Blogs Found</h3>
+        <% } %>
+
+        <% blogs.forEach(blog => { %>
+            <div class="card mb-4 mx-auto" style="max-width: 700px; width: 100%;">
+
+                <img
+                    src="<%= blog.coverImgUrl %>"
+                    class="card-img-top"
+                    style="height: 350px; object-fit: cover;"
+                    alt=""
+                >
+
+                <div class="card-body">
+
+                    <div class="d-flex align-items-center mb-3">
+
+                        <img
+                            src="<%= blog.createdBy.profileImg %>"
+                            width="40"
+                            height="40"
+                            class="rounded-circle"
+                            alt=""
+                        >
+
+                        <span class="ms-2 fw-bold">
+                            <%= blog.createdBy.name %>
+                        </span>
+
+                    </div>
+
+                    <h3><%= blog.title %></h3>
+
+                    <a href="/blog/<%= blog._id %>" class="btn btn-primary">
+                        Read More
+                    </a>
+
+                </div>
+
+            </div>
+
+        <% }) %>
+
+    </div>
+   
+    <%- include('./partials/script') %>
+
+</body>
+</html>
